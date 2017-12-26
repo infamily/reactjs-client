@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
+import langService from '../../../services/lang.service';
 import './comment_form.css';
 
 class Comment extends Component {
@@ -64,6 +65,8 @@ class Comment extends Component {
       </div>
     );
 
+    const comment_classes = "comment__text " + langService.current;
+
     return (
       <div className="comment__section">
         <form onSubmit={this.submitComment}>
@@ -72,7 +75,7 @@ class Comment extends Component {
             <FormControl 
               componentClass="textarea"
               ref={(ip) => this.myInp = ip}
-              className="comment__text"
+              className={comment_classes}
               rows="4"
               name="text" 
               value={text} 

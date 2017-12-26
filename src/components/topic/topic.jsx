@@ -5,6 +5,7 @@ import { Button, Badge } from 'react-bootstrap';
 
 import topicService from '../../services/topic.service.js';
 import commentService from '../../services/comment.service.js';
+import langService from '../../services/lang.service';
 import configs from '../../configs';
 
 import Menu from '../utils/menu';
@@ -185,13 +186,13 @@ class Topic extends Component {
     const Topic = () => topic.title ?
       <div className="topic__container">
         
-        <h1>{topic.title}</h1>
+        <h1 className={langService.current}>{topic.title}</h1>
         <i>{topic.is_draft ? <p>draft</p> : ''}</i>
 
         <EditTopic owner={topic.owner.username} id={topic.id}/>
         <Tags /> <br /> 
         
-        <div>{ReactHtmlParser(mdConverter.makeHtml(topic.body))}</div> <br />
+        <div className={langService.current}>{ReactHtmlParser(mdConverter.makeHtml(topic.body))}</div> <br />
         <span>{topic.owner.username}</span>
         <br /><br /> 
       </div> 

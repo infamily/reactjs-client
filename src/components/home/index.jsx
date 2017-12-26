@@ -112,18 +112,19 @@ class Home extends Component {
     const { flag } = this.state;
     const isVisible = this.hasMore && 'home--hidden';
     const hasMore = this.hasMore();
+    const classes = 'topics__title '+this.state.search;
 
     return (
       <div className="main">
         <article className="topics"> 
           <div className="header">
-            <h1 className="topics__title en">{title}</h1>
+            <h1 className={classes}>{title}</h1>
 
             <form onSubmit={this.makeSearch}>
               <FormGroup >
                 <InputGroup>
                   <Flag setFlag={this.setFlag} flag={flag}/>
-                  <FormControl type="search" name="query" value={this.state.query} onChange={this.handleChange} />
+                  <FormControl type="search" name="query" value={this.state.query} onChange={this.handleChange} className={langService.current} />
                   <InputGroup.Button>
                     <Button type="submit">{button}</Button>
                   </InputGroup.Button>

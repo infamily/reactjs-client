@@ -14,6 +14,8 @@ import {
 
 import topicViewService from '../../services/topic_view.service';
 import topicService from '../../services/topic.service';
+import langService from '../../services/lang.service';
+
 import configs from '../../configs';
 import Select from 'react-select';
 import 'react-select/dist/react-select.min.css';
@@ -330,6 +332,9 @@ class Topic extends Component {
         </Modal>
       </div>; 
 
+    const topic_classes = "topic_view__field " + langService.current;
+    const comment_classes = "comment__text " + langService.current;
+
     return (
       <div className="main">
         <div className="topic_view__container">
@@ -361,7 +366,7 @@ class Topic extends Component {
               <ControlLabel>What's on your mind?</ControlLabel>
               <FormControl
                 id="formControlsText"
-                className="topic_view__field"
+                className={topic_classes}
                 type="text"
                 name="topic_title"
                 label="Title"
@@ -371,7 +376,7 @@ class Topic extends Component {
               />
               <FormControl
                 componentClass="textarea"
-                className="comment__text"
+                className={comment_classes}
                 rows="10"
                 name="topic_text"
                 placeholder={"Enter your " + type.toLowerCase()}               

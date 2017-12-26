@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import store_home from '../../../store/home'; 
 import configs from '../../../configs'; 
 import './topic_list.css'; 
+import langService from '../../../services/lang.service';
 
 class Topics extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class Topics extends Component {
       topics.map(topic => {
 
         return (
-          <section className={"topics__item " + draftStyle(topic)} key={topic.id}>
+          <section className={"topics__item " + draftStyle(topic) + " " + langService.current} key={topic.id}>
             <EditTopic owner={topic.owner.username} id={topic.id} />
             <Link to={'/topic/' + topic.id} onClick={this.saveScroll} className="topics__item-title" data-id={topic.id}>
               <h2>

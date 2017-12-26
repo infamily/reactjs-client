@@ -5,21 +5,25 @@ export default {
         'Singapore',
         'Frankfurt',
         'Shanghai',
+        // '[localhost]',
       ],
       'cn': [
         '新加坡',
         '法兰克福',
         '上海',
+        // '[localhost]',
       ],
       'ru': [
         'Сингапур',
         'Франкфурт',
         'Шанхай',
+        // '[localhost]',
       ],
       'lt': [
         'Singapūras',
         'Frankfurtas',
         'Šanchajus',
+        // '[localhost]',
       ]
     }
   },
@@ -36,9 +40,13 @@ export default {
       title: 'Семья Инфи́нити',
       button: 'Поиск'
     },
-    'ly': {
+    'lt': {
       title: 'Begalybės šeima',
       button: 'Paieška'
+    },
+    'el': {
+      title: 'C% Lyc',
+      button: '/(<>)'
     },
   },
   how : {

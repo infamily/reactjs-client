@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import Transaction from './transaction';
 import ProgressBar from './progress_bar';
+import langService from '../../../services/lang.service';
 
 import ReactHtmlParser from 'react-html-parser';
 import showdown from 'showdown';
@@ -95,7 +96,7 @@ export default class Comments extends Component {
 
       return (
         <div key={id} className="comment__section">
-          <div>{content}</div>
+          <div className={langService.current}>{content}</div>
           <Progress />
           <Buttons owner={owner} id={id} remains={remains} comment={comment}/>
 

@@ -1,3 +1,8 @@
+.el {
+  font-family: Earth4;
+  font-size: xx-large !important;
+}
+
 .topics__content {
   min-height: calc(100vh - 100px);
 }
